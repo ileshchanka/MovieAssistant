@@ -1,173 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        android:theme="?android:attr/toolbarStyle"
+        >
 
-        <ImageView
-            android:id="@+id/imageViewTheIceAge"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/the_ice_age"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/the_ice_age" />
-
-        <TextView
-            android:id="@+id/textViewTheIceAge"
-            android:layout_width="0dp"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/the_ice_age_adventures_of_buck_wild_2022"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewTheIceAge"
-            app:layout_constraintTop_toTopOf="@id/imageViewTheIceAge" />
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@id/toolbar"
+            >
 
-        <TextView
-            android:id="@+id/textViewTheIceAgeOverview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/the_ice_age_adventures_of_buck_wild_2022_overview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewTheIceAge"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTheIceAge" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/android"
+                app:layout_collapseMode="parallax"
+                tools:ignore="ContentDescription"
+                />
 
-        <Button
-            android:id="@+id/buttonTheIceAge"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewTheIceAge"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTheIceAgeOverview" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:actionBarSize"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white"
+                />
 
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrierTheIceAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="imageViewTheIceAge, textViewTheIceAge, textViewTheIceAgeOverview, buttonTheIceAge" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        <ImageView
-            android:id="@+id/imageViewSpiderMan"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/spider_man"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barrierTheIceAge"
-            app:srcCompat="@drawable/spider_man" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/textViewSpiderMan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/spider_man_no_way_home_2021"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewSpiderMan"
-            app:layout_constraintTop_toTopOf="@id/imageViewSpiderMan" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_movie"
+        />
 
-        <TextView
-            android:id="@+id/textViewSpiderManOverview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/spider_man_no_way_home_2021_overview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewSpiderMan"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSpiderMan" />
+    <Button
+        android:id="@+id/btn_favourites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/favourites"
+        app:layout_anchor="@id/recycler_view"
+        app:layout_anchorGravity="end|bottom"
+        />
 
-        <Button
-            android:id="@+id/buttonSpiderMan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewSpiderMan"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSpiderManOverview" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrierSpiderMan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="imageViewSpiderMan, textViewSpiderMan, textViewSpiderManOverview, buttonSpiderMan" />
-
-        <ImageView
-            android:id="@+id/imageViewThe355"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/the_355"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barrierSpiderMan"
-            app:srcCompat="@drawable/the_355" />
-
-        <TextView
-            android:id="@+id/textViewThe355"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/the_355_2022"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewThe355"
-            app:layout_constraintTop_toTopOf="@id/imageViewThe355" />
-
-        <TextView
-            android:id="@+id/textViewThe355Overview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/the_355_2022_overview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewThe355"
-            app:layout_constraintTop_toBottomOf="@+id/textViewThe355" />
-
-        <Button
-            android:id="@+id/buttonThe355"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewThe355"
-            app:layout_constraintTop_toBottomOf="@+id/textViewThe355Overview" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrierThe355"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="imageViewThe355, textViewThe355, textViewThe355Overview, buttonThe355" />
-
-        <Button
-            android:id="@+id/inviteFriend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@string/invite_friend"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barrierThe355" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
