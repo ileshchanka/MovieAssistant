@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MovieAssistant"
         >
         <activity
-            android:name=".itemfavourite.FavouriteActivity"
+            android:name=".FavouriteActivity"
             android:exported="false"
             />
         <activity

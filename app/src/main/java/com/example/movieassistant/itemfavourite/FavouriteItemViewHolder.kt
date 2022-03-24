@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieassistant.ClickListener
 import com.example.movieassistant.R
-import com.example.movieassistant.itemmovie.MovieItem
+import com.example.movieassistant.models.MovieItem
 
 class FavouriteItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var poster: ImageView = itemView.findViewById(R.id.poster)

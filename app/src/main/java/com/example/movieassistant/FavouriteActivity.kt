@@ -1,13 +1,13 @@
-package com.example.movieassistant.itemfavourite
+package com.example.movieassistant
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieassistant.ClickListener
 import com.example.movieassistant.MainActivity.Companion.FAVOURITE_LIST_EXTRA
-import com.example.movieassistant.R
-import com.example.movieassistant.itemmovie.MovieItem
+import com.example.movieassistant.itemfavourite.FavouriteItemAdapter
+import com.example.movieassistant.models.MovieItem
 
 class FavouriteActivity : AppCompatActivity() {
 
@@ -24,22 +24,18 @@ class FavouriteActivity : AppCompatActivity() {
         }
         recyclerView.adapter = FavouriteItemAdapter(items, object : ClickListener {
             override fun onShortClick(movieItem: MovieItem) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@FavouriteActivity, "Movie Click", Toast.LENGTH_SHORT).show()
             }
 
             override fun onLongClick(movieItem: MovieItem) {
                 items.remove(movieItem)
                 recyclerView.adapter?.notifyDataSetChanged()
-
+                result.apply {
+                    putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
+                }
+                setResult(RESULT_CANCELED, result)
+                Toast.makeText(this@FavouriteActivity, resources.getString(R.string.removed_from_favourite), Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        result.apply {
-            putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
-        }
-        setResult(RESULT_OK, result)
     }
 }

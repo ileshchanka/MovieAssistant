@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieassistant.ClickListener
 import com.example.movieassistant.R
+import com.example.movieassistant.models.MovieItem
 
 class MovieItemAdapter(
     private val items: List<MovieItem>,
@@ -12,9 +13,7 @@ class MovieItemAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-
         val inflater = LayoutInflater.from(parent.context)
-
         return MovieItemViewHolder(inflater.inflate(R.layout.item_movie, parent, false))
     }
 

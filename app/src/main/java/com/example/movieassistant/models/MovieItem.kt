@@ -1,4 +1,4 @@
-package com.example.movieassistant.itemmovie
+package com.example.movieassistant.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
