@@ -30,16 +30,16 @@ class FavouriteActivity : AppCompatActivity() {
             override fun onLongClick(movieItem: MovieItem) {
                 items.remove(movieItem)
                 recyclerView.adapter?.notifyDataSetChanged()
-                result.apply {
-                    putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
-                }
-                setResult(RESULT_OK, result)
+
             }
         })
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-
+        result.apply {
+            putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
+        }
+        setResult(RESULT_OK, result)
     }
 }

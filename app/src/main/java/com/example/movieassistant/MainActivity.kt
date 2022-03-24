@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity() {
         ),
     )
 
-    private val favourites = mutableListOf<MovieItem>()
+    private var favourites = mutableListOf<MovieItem>()
 
     private val showFavourites = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             result.data?.getParcelableArrayListExtra<MovieItem>(COMMENT)?.let {
-                items = it
+                favourites = it
             }
         }
     }
