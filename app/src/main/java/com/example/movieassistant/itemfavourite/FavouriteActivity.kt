@@ -1,5 +1,6 @@
 package com.example.movieassistant.itemfavourite
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ class FavouriteActivity : AppCompatActivity() {
 
     private val recyclerView by lazy { findViewById<RecyclerView>(R.id.recycler_view_favourites) }
     private var items: MutableList<MovieItem> = mutableListOf()
+    private val result = Intent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +30,16 @@ class FavouriteActivity : AppCompatActivity() {
             override fun onLongClick(movieItem: MovieItem) {
                 items.remove(movieItem)
                 recyclerView.adapter?.notifyDataSetChanged()
+                result.apply {
+                    putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
+                }
+                setResult(RESULT_OK, result)
             }
         })
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
+
     }
 }

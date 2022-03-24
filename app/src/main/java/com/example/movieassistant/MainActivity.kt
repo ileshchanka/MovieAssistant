@@ -2,8 +2,10 @@ package com.example.movieassistant
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
@@ -17,11 +19,21 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val FAVOURITE_LIST_EXTRA = "favourite_list_extra"
+
+        const val IMAGE_ID = "image_id"
+        const val TITLE = "title"
+        const val OVERVIEW = "overview"
+        const val FAVOURITE = "favourite"
+        const val COMMENT = "comment"
+        const val LOG_TAG = "MainActivity"
+        const val THE_ICE_AGE_OPENED = "opened_the_ice_age"
+        const val THE_SPIDER_MAN_OPENED = "opened_spider_man"
+        const val THE_355_OPENED = "opened_the_355"
     }
 
     private val recyclerView by lazy { findViewById<RecyclerView>(R.id.recycler_view) }
 
-    private val items = listOf(
+    private var items = listOf(
         MovieItem(
             imageId = R.drawable.the_ice_age,
             title = "The Ice Age Adventures of Buck Wild (2022)",
@@ -39,7 +51,15 @@ class MainActivity : AppCompatActivity() {
         ),
     )
 
-    private val favorites = mutableListOf<MovieItem>()
+    private val favourites = mutableListOf<MovieItem>()
+
+    private val showFavourites = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            result.data?.getParcelableArrayListExtra<MovieItem>(COMMENT)?.let {
+                items = it
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onLongClick(movieItem: MovieItem) {
                 Toast.makeText(this@MainActivity, "Favorite Click", Toast.LENGTH_SHORT).show()
-                favorites.add(movieItem)
+                favourites.add(movieItem)
             }
         })
         val divider = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
@@ -74,9 +94,9 @@ class MainActivity : AppCompatActivity() {
     private fun initListeners() {
         findViewById<Button>(R.id.btn_favourites).setOnClickListener {
             val intent = Intent(this, FavouriteActivity::class.java).apply {
-                putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, favorites as ArrayList<MovieItem>)
+                putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, favourites as ArrayList<MovieItem>)
             }
-            startActivity(intent)
+            showFavourites.launch(intent)
         }
     }
 
