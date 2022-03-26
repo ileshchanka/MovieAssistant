@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/drawable/divider.xml" value="0.148" />
-        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_details.xml" value="0.337037037037037" />
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout-land/activity_favourite.xml" value="0.2677083333333333" />
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout-land/activity_main.xml" value="0.2677083333333333" />
         <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_favourite.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_main.xml" value="0.23450264296011533" />
-        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/item_movie.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieassistant.MainActivity.Companion.FAVOURITE_LIST_EXTRA
 import com.example.movieassistant.itemfavourite.FavouriteItemAdapter
+import com.example.movieassistant.itemfavourite.FavouriteItemAdapter.ClickListener
 import com.example.movieassistant.models.MovieItem
 
 class FavouriteActivity : AppCompatActivity() {
@@ -27,9 +28,9 @@ class FavouriteActivity : AppCompatActivity() {
                 Toast.makeText(this@FavouriteActivity, "Movie Click", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onLongClick(movieItem: MovieItem) {
+            override fun onLongClick(movieItem: MovieItem, position: Int) {
                 items.remove(movieItem)
-                recyclerView.adapter?.notifyDataSetChanged()
+                recyclerView.adapter?.notifyItemRemoved(position)
                 result.apply {
                     putParcelableArrayListExtra(FAVOURITE_LIST_EXTRA, items as ArrayList<MovieItem>)
                 }

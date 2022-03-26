@@ -3,7 +3,6 @@ package com.example.movieassistant.itemfavourite
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieassistant.ClickListener
 import com.example.movieassistant.R
 import com.example.movieassistant.models.MovieItem
 
@@ -27,5 +26,10 @@ class FavouriteItemAdapter(
 
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    interface ClickListener {
+        fun onShortClick(movieItem: MovieItem)
+        fun onLongClick(movieItem: MovieItem, position: Int)
     }
 }

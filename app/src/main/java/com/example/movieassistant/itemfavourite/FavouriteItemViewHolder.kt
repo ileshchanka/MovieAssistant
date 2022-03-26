@@ -4,8 +4,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieassistant.ClickListener
 import com.example.movieassistant.R
+import com.example.movieassistant.itemfavourite.FavouriteItemAdapter.ClickListener
 import com.example.movieassistant.models.MovieItem
 
 class FavouriteItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -19,7 +19,8 @@ class FavouriteItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
         overview.text = item.overview
 
         itemView.setOnLongClickListener {
-            listener.onLongClick(item)
+            listener.onLongClick(item, layoutPosition)
+
             return@setOnLongClickListener true
         }
 

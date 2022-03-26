@@ -4,8 +4,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieassistant.ClickListener
 import com.example.movieassistant.R
+import com.example.movieassistant.itemmovie.MovieItemAdapter.ClickListener
 import com.example.movieassistant.models.MovieItem
 
 class MovieItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

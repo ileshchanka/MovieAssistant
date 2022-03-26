@@ -10,8 +10,9 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieassistant.models.MovieItem
 import com.example.movieassistant.itemmovie.MovieItemAdapter
+import com.example.movieassistant.itemmovie.MovieItemAdapter.ClickListener
+import com.example.movieassistant.models.MovieItem
 
 class MainActivity : AppCompatActivity() {
 
