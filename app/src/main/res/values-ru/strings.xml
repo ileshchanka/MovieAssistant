@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="details">Детали</string>
+    <string name="like">Нравится</string>
+    <string name="comment">Комментарий</string>
+    <string name="invite_friend">Пригласить друга</string>
+    <string name="poster">Постер</string>
+    <string name="add">Добавить</string>
+    <string name="favourites">Избранное</string>
+    <string name="removed_from_favourite">Удалено из избранного</string>
+    <string name="not_added_to_favorite">Не добавлено в избранное</string>
+    <string name="added_to_favorite">Добавлено в избранное</string>
+</resources>

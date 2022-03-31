@@ -1,20 +1,15 @@
 <resources>
-    <string name="app_name">MovieAssistant</string>
-    <string name="the_ice_age">The Ice Age</string>
-    <string name="spider_man">Spider Man</string>
-    <string name="the_355">The 355</string>
+    <string name="app_name" translatable="false">MovieAssistant</string>
 
-    <string name="the_ice_age_adventures_of_buck_wild_2022">The Ice Age Adventures of Buck Wild (2022)</string>
-    <string name="spider_man_no_way_home_2021">Spider-Man: No Way Home (2021)</string>
-    <string name="the_355_2022">The 355 (2022)</string>
-
-    <string name="the_ice_age_adventures_of_buck_wild_2022_overview">The fearless one-eyed weasel Buck teams up with mischievous possum brothers Crash &amp; Eddie as they head off on a new adventure into Buck\'s home: The Dinosaur World.</string>
-    <string name="spider_man_no_way_home_2021_overview">Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.</string>
-    <string name="the_355_2022_overview">A group of top female agents from American, British, Chinese, Columbian and German government agencies are drawn together to try and stop an organization from acquiring a deadly weapon to send the world into chaos.</string>
     <string name="details">Details</string>
     <string name="like">Like</string>
     <string name="comment">Comment</string>
     <string name="invite_friend">Invite Friend</string>
+    <string name="poster">Poster</string>
+    <string name="add">Add</string>
+    <string name="favourites">Favourites</string>
 
-
+    <string name="added_to_favorite">Added to Favorite</string>
+    <string name="not_added_to_favorite">Not Added to Favorite</string>
+    <string name="removed_from_favourite">Removed from Favourite</string>
 </resources>

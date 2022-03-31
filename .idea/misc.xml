@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout-land/activity_favourite.xml" value="0.2677083333333333" />
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout-land/activity_main.xml" value="0.2677083333333333" />
+        <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_favourite.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/ihar.leshchanka/AndroidStudioProjects/MovieAssistant/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
       </map>
     </option>
