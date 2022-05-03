@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:defaultNavHost="true"
+    app:startDestination="@id/homeFragment"
+    >
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.movieassistant.fragments.DetailsFragment"
+        android:label="DetailsFragment"
+        >
+        <argument
+            android:name="movie"
+            app:argType="com.example.movieassistant.models.Movie"
+            />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_detailsFragment"
+        app:destination="@id/detailsFragment"
+        />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.movieassistant.fragments.HomeFragment"
+        android:label="HomeFragment"
+        />
+
+</navigation>

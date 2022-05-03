@@ -13,15 +13,7 @@
         android:theme="@style/Theme.MovieAssistant"
         >
         <activity
-            android:name=".FavouriteActivity"
-            android:exported="false"
-            />
-        <activity
-            android:name=".DetailsActivity"
-            android:exported="false"
-            />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true"
             >
             <intent-filter>
